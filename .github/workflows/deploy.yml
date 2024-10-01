@@ -45,5 +45,6 @@ jobs:
           port: 22
           script_stop: true
           script: |
-            ps -ef | grep java | grep -v grep | awk '{print $2}' | xargs kill -9
+            ps -ef | grep java | grep -v grep | awk '{print $2}' | xargs -r kill -9
             nohup java -jar *.jar > app.log 2>&1 &
+
